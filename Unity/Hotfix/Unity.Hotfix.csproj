@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\Temp\UnityVS_bin\Debug\</OutputPath>
+    <OutputPath>..\Temp\bin\Debug\</OutputPath>
     <DefineConstants>TRACE;DEBUG;ILRuntime</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -29,7 +29,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\Temp\UnityVS_bin\Release\</OutputPath>
+    <OutputPath>..\Temp\bin\Release\</OutputPath>
     <DefineConstants>TRACE;ILRuntime</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -39,16 +39,16 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\Temp\UnityVS_bin\Debug\UnityEngine.dll</HintPath>
+      <HintPath>..\Temp\bin\Debug\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\Temp\UnityVS_bin\Debug\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\Temp\bin\Debug\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\Temp\UnityVS_bin\Debug\UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>..\Temp\bin\Debug\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\Temp\bin\Debug\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -106,13 +106,23 @@
     <Compile Include="Module\Message\HotfixOpcode.cs" />
     <Compile Include="Module\UI\UIType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="UI\UILobby\Component\UILobbyComponent.cs" />
     <Compile Include="UI\UILobby\Factory\UILobbyFactory.cs" />
     <Compile Include="UI\UILogin\Component\UILoginComponent.cs" />
     <Compile Include="UI\UILogin\Event\InitSceneStart_CreateLoginUI.cs" />
     <Compile Include="UI\UILogin\Factory\UILoginFactory.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Unity.csproj">
       <Project>{cf118143-7e37-744f-be45-3f55345fec40}</Project>
